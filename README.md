@@ -19,14 +19,12 @@ Single personal blog theme Hugo. Forked from [Ink](https://github.com/knadh/hugo
 cd into your hugo site's root directory and:
 
 ```sh
-cd themes
-git clone https://github.com/appaka/hugo-single.git
+git submodule add https://github.com/appaka/hugo-single.git themes/single
 ```
 
-To add this theme to your hugo website:
-```sh
-cd mywebsite.com
-git submodule add https://github.com/appaka/hugo-single.git themes/single
+edit your `config.toml` file:
+```toml
+theme = "single"
 ```
 
 For more information read the [official setup guide](https://gohugo.io/overview/installing/) of Hugo.
