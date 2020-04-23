@@ -1,5 +1,5 @@
-# Ink
-Crisp, minimal personal website and blog theme Hugo. Forked from [Ezhil](https://github.com/vividvilla/ezhil).
+# Single
+Single personal blog theme Hugo. Forked from [Ink](https://github.com/knadh/hugo-ink).
 
 ## Demo
 [View demo](https://hugo-ink.netlify.com)
@@ -9,7 +9,7 @@ Crisp, minimal personal website and blog theme Hugo. Forked from [Ezhil](https:/
 * Google Analytics integration
 * Syntax highlighting
 * Twitter cards and opengraph tags support
-* Disqus comments
+* Facebook comments
 * RSS feeds
 * Custom CSS/JS
 * Multilingual months support
@@ -20,15 +20,20 @@ cd into your hugo site's root directory and:
 
 ```sh
 cd themes
-git clone https://github.com/knadh/hugo-ink.git
+git clone https://github.com/appaka/hugo-single.git
+```
+
+To add this theme to your hugo website:
+```sh
+cd mywebsite.com
+git submodule add https://github.com/appaka/hugo-single.git themes/single
 ```
 
 For more information read the [official setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
-
 ## Content type
 
-You can specify content type with field `type` in your content. For example static pages can be set as type `page` which are excluded from recent posts and all posts page. You can use site params `mainSections` and `disableDisqusTypes` to control which page types are excluded from recent posts and Disqus comments respectively.
+You can specify content type with field `type` in your content. For example static pages can be set as type `page` which are excluded from recent posts and all posts page. You can use site params `mainSections` to control which page types are excluded from recent posts.
 
 ```md
 ---
@@ -66,6 +71,6 @@ EOF
 
 ## Credits
 
-* [Ezhil theme](https://github.com/vividvilla/ezhil) from which Ink was forked
+* [Ink theme](https://github.com/knadh/hugo-ink) from which Single was forked
 
 Licensed under the MIT license.

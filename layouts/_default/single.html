@@ -36,24 +36,10 @@
 				{{ end }}
 			</div>
 
-			{{- if .Site.DisqusShortname -}}
-			{{- $.Scratch.Set "isDisqus" true -}}
-
-			{{- if and (isset .Params "type") (in .Site.Params.disableDisqusTypes .Params.type) -}}
-				{{- $.Scratch.Set "isDisqus" false -}}
-			{{- end -}}
-
-			{{- if and (isset .Params "disqus") (eq .Params.disqus false) -}}
-				{{- $.Scratch.Set "isDisqus" false -}}
-			{{- else if and (isset .Params "disqus") (eq .Params.disqus true) -}}
-				{{- $.Scratch.Set "isDisqus" true -}}
-			{{- end -}}
-
-			{{- if eq ($.Scratch.Get "isDisqus") true -}}
-			{{- partial "disqus.html" . -}}
-			{{- end -}}
-			{{- end -}}
-		</div>
+            {{- if .Site.Params.facebookAppId -}}
+            <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width="" data-order-by="reverse_time" data-href="{{ .Permalink }}"></div>
+            {{- end -}}
+        </div>
 	</div>
 	{{ partial "footer.html" . }}
 </body>
