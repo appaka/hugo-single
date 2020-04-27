@@ -28,11 +28,6 @@
 		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}{{ .Site.Params.customCSS }}" />
 	{{ end }}
 
-        <link id="dark-scheme" rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/dark.css" />
-        {{- if isset .Site.Params "customdarkcss" }}
-                <link id="dark-scheme" rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}{{ .Site.Params.customDarkCSS }}" />
-        {{- end }}
-
 	{{ if and (isset .Site.Params "social") (isset .Site.Params "feathericonscdn") (eq .Site.Params.featherIconsCDN true) -}}
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	{{- else if (isset .Site.Params "social") -}}
@@ -42,4 +37,16 @@
 	{{- if isset .Site.Params "customjs" -}}
 		{{- range .Site.Params.customJS }}<script src="{{ $.Site.BaseURL }}{{ . }}"></script>{{- end }}
 	{{- end }}
+
+    {{ if .Site.Params.googleTagId }}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleTagId }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ .Site.Params.googleTagId }}');
+    </script>
+    {{ end }}
 </head>
